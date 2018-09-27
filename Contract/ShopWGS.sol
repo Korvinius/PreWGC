@@ -1,6 +1,6 @@
 pragma solidity ^0.4.24
 
-contract UserWallet is Owned {
+contract ShopWGS is Owned {
  
     mapping(address => uint) public userbal;
     mapping(uint => string) public shop;
@@ -8,11 +8,11 @@ contract UserWallet is Owned {
     uint public commission;
     
     constructor() public {
-    	require(!shopopen);
     	shopactivate = false;
     }
     
     function shopAct() public onlyOwner {
+    	require(!shopopen);
     	shopopen = true;
     }
     
